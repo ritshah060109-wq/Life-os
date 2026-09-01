@@ -169,7 +169,7 @@ export const TrophyCustomizerModal: React.FC<TrophyCustomizerModalProps> = ({
           initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          className="relative w-full max-w-[460px] max-h-[85vh] overflow-y-auto rounded-2xl sm:rounded-3xl bg-[#09090b] border border-amber-500/30 p-3.5 sm:p-5 text-neutral-100 shadow-[0_0_40px_rgba(245,158,11,0.12)] my-auto no-scrollbar"
+          className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-2xl sm:rounded-3xl bg-[#09090b] border border-amber-500/30 p-4 sm:p-6 md:p-7 text-neutral-100 shadow-[0_0_40px_rgba(245,158,11,0.12)] my-auto no-scrollbar"
         >
           {/* Close button */}
           <button
