@@ -1,0 +1,13 @@
+{
+  "appId": "com.lifeos.app",
+  "appName": "LifeOS",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
