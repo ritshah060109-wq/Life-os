@@ -19,7 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -30,21 +32,19 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies with Bun
+        run: bun install
 
       - name: Build React app
-        run: npm run build
+        run: bun run build
 
-      - name: Setup Capacitor
-        run: |
-          npm install -g @capacitor/cli
-          npx capacitor init --web-dir dist --bundle com.lifeos.app --app-name LifeOS || true
+      - name: Install Capacitor CLI
+        run: bun add -g @capacitor/cli
 
       - name: Add Android platform
         run: |
-          npx capacitor add android || true
-          npx capacitor copy android
+          bunx capacitor add android || true
+          bunx capacitor copy android
 
       - name: Build APK (Debug)
         run: |
